@@ -1,0 +1,77 @@
+:root {
+    --variable-bg-color: lightblue;
+    --var-size: 50px;
+}  
+
+.icon {
+    height: var(--var-size, 50px);
+    width: var(--var-size, 50px);
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Fredericka the Great', Helvetica;
+}
+
+body {
+    background-color: var(--variable-bg-color, lightblue);
+}
+
+.blue-class {
+    color: blue;
+}
+
+.size-image {
+width: 8%;
+height: 8%;
+}
+
+.circle-image {
+border-radius: 50%;
+}
+
+.injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+}
+
+.box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+}
+
+.yellow-box {
+    background-color: yellow;
+    padding: 10px;
+}
+
+.red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px 20px 20px 20px;
+}
+
+.blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+}
+
+[type='radio'] {
+margin: 20px 0px 20px 0px;
+}
+
+.pink-text {
+    color: pink !important;
+}
+
+.blue-text {
+    color: blue;
+}
