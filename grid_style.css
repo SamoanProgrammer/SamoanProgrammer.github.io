@@ -1,0 +1,71 @@
+.d1{background:LightSkyBlue;}
+.d1-as{
+    background:LightSkyBlue;
+    align-self: start;
+}
+.d1-js{
+    background:LightSkyBlue;
+    justify-self: start;
+}
+
+.d2{background:LightSalmon;}
+.d2-as{
+    background:LightSalmon;
+    align-self: center;
+}
+.d2-js{
+    background:LightSalmon;
+    justify-self: center;
+}
+
+.d3{background:PaleTurquoise;}
+.d2-as{
+    background:PaleTurquoise;
+    align-self: end;
+}
+.d2-js{
+    background:PaleTurquoise;
+    justify-self: end;
+}
+
+.d4{background:LightPink;}
+
+.d5{background:PaleGreen;}
+.d5-cs {
+    background:PaleGreen;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+}
+
+.container {
+  font-size: 40px;
+  width: 100%;
+  background: LightGray;
+  display: grid;    
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 50px 50px;
+}
+
+.container2 {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;    
+    grid-template-columns: auto 50px 10% 2fr 1fr;
+    grid-template-rows: 50px 50px;
+  }
+
+  .container3 {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /*
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    */
+    grid-gap: 10px 20px; /*short-hand for grid-row-gap and grid-column-gap*/
+  }

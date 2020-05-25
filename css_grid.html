@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="grid_style.css">
+		<title>Samoan Programmer</title>
+	</head>
+	<body>
+        <a href="index.html">Home</a>
+        <br />
+        <div class="container">
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+            <div class="d5">5</div>
+        </div>
+        Grid Units:
+        <ul>
+            <li>fr: sets the column or row to a fraction of the available space</li>
+            <li>auto: sets the column or row to the width or height of its content automatically</li>
+            <li>%: adjusts the column or row to the percent width of its container</li>
+        </ul>
+        <div class="container2">
+            <div class="d1">auto</div>
+            <div class="d2">50px</div>
+            <div class="d3">10%</div>
+            <div class="d4">2fr</div>
+            <div class="d5">1fr</div>
+        </div>
+        Add gaps with grid-gap:
+        <div class="container3">
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+            <div class="d5">5</div>
+        </div>
+        Control Spacing, use <a href="https://www.freecodecamp.org/learn/responsive-web-design/css-grid/use-grid-column-to-control-spacing">grid-column</a> and similarly grid-row:
+        <div class="container3">
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+            <div class="d5-cs">grid-column: 2 / 4, grid-row: 2 / 4</div>
+        </div>
+        Align item horizontally using justify-self (use justify-items on container to set alignment for all items in the grid):
+        <div class="container3">
+            <div class="d1-js">start</div>
+            <div class="d2-js">center</div>
+            <div class="d3-js">end</div>
+            <div class="d4">4</div>
+            <div class="d5">5</div>
+        </div>
+        Align item vertically using align-self (use align-items on container to set alignment for all items in the grid):
+        <div class="container3">
+            <div class="d1-as">start</div>
+            <div class="d2-as">center</div>
+            <div class="d3-as">end</div>
+            <div class="d4">4</div>
+            <div class="d5">5</div>
+        </div>
+	</body>
+</html>
