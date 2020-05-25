@@ -19,11 +19,11 @@
 }
 
 .d3{background:PaleTurquoise;}
-.d2-as{
+.d3-as{
     background:PaleTurquoise;
     align-self: end;
 }
-.d2-js{
+.d3-js{
     background:PaleTurquoise;
     justify-self: end;
 }
