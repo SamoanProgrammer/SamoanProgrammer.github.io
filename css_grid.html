@@ -14,6 +14,7 @@
             <div class="d4">4</div>
             <div class="d5">5</div>
         </div>
+        <br />
         Grid Units:
         <ul>
             <li>fr: sets the column or row to a fraction of the available space</li>
@@ -27,6 +28,7 @@
             <div class="d4">2fr</div>
             <div class="d5">1fr</div>
         </div>
+        <br />
         Add gaps with grid-gap:
         <div class="container3">
             <div class="d1">1</div>
@@ -35,6 +37,7 @@
             <div class="d4">4</div>
             <div class="d5">5</div>
         </div>
+        <br />
         Control Spacing, use <a href="https://www.freecodecamp.org/learn/responsive-web-design/css-grid/use-grid-column-to-control-spacing">grid-column</a> and similarly grid-row:
         <div class="container3">
             <div class="d1">1</div>
@@ -43,6 +46,7 @@
             <div class="d4">4</div>
             <div class="d5-cs">grid-column: 2 / 4, grid-row: 2 / 4</div>
         </div>
+        <br />
         Align item horizontally using justify-self (use justify-items on container to set alignment for all items in the grid):
         <div class="container3">
             <div class="d1-js">start</div>
@@ -51,6 +55,7 @@
             <div class="d4">4</div>
             <div class="d5">5</div>
         </div>
+        <br />
         Align item vertically using align-self (use align-items on container to set alignment for all items in the grid):
         <div class="container3">
             <div class="d1-as">start</div>
@@ -59,5 +64,42 @@
             <div class="d4">4</div>
             <div class="d5">5</div>
         </div>
+        <br />
+        Area Template - Grid Areas.
+        <br />
+        repeat function lets you define grid-template-columns and grid-template-rows like this grid-template-columns: repeat(3, 1fr); is the same as 1fr 1fr 1fr;
+        <br />
+        minmax is used to limit the size of items when container changes size, so in the example minmax(90px, 1fr), it will not go smaller than 90px and will grow to 1fr
+        <div class="container-gta">
+            <div class="d1">minmax(90px, 1fr)</div>
+            <div class="d2">minmax(90px, 1fr)</div>
+            <div class="d3">minmax(90px, 1fr)</div>
+            <div class="d4">4</div>
+            <div class="d5-ga">5</div>
+          </div> 
+          The repeat comes with an option to auto-fill, this allows you to insert as many rows or columns of your desired size as possible depending on the size of the container.
+          <div class="container-autofill">
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+            <div class="d5">5</div>
+        </div>
+        Then there is auto-fit, that works almost identically to auto-fill. The only difference is that when the container's size exceeds the size of all the items combined, auto-fill keeps inserting empty rows or columns and pushes your items to the side, while auto-fit collapses those empty rows or columns and stretches your items to fit the size of the container.
+        <div class="container-autofit">
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+            <div class="d5">5</div>
+        </div>
+        Use <a href="https://www.freecodecamp.org/learn/responsive-web-design/css-grid/use-media-queries-to-create-responsive-layouts">Media Queries</a> to Create Responsive Layouts:
+        <div class="container-media">
+            <div class="item1">header</div>
+            <div class="item2">advert</div>
+            <div class="item3">content</div>
+            <div class="item4">footer</div>
+          </div>
+        You can also have Grids within Grids. Click <a href="https://www.freecodecamp.org/learn/responsive-web-design/css-grid/create-grids-within-grids">here</a> for more info.
 	</body>
 </html>
