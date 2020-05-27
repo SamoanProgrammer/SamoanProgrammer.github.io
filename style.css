@@ -6,7 +6,6 @@
 .icon {
     height: auto;
     width: var(--var-size, 50px);
-    max-width: var(--var-size, 50px);
 }
 
 img:hover {
