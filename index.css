@@ -6,6 +6,11 @@
   --main-gray: #303841;
 }
 
+.icon {
+    height: auto;
+    width: 50px;
+}
+
 /* Base reset */
 * {
   margin: 0;
