@@ -15,13 +15,13 @@
 img:hover {
     transform: scale(1.1);
 }
-
+/*
 h1 {
     text-align: center;
     font-size: 40px;
     font-family: 'Fredericka the Great', Helvetica;
 }
-
+*/
 body {
     background-color: var(--variable-bg-color, lightblue);
 }
