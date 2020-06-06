@@ -21,3 +21,35 @@ let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
 fruits.indexOf('dates'); // returns -1
 fruits.indexOf('oranges'); // returns 2
 fruits.indexOf('pears'); // returns 1, the first index at which the element exists
+
+// Check if Object has a Property
+let users = {
+    Alan: {
+      age: 27,
+      online: false
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: false
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+  };
+users.hasOwnProperty('Alan');
+'Alan' in users; // both return true and do the same thing
+
+// Iterate through the keys of an object
+for (let user in users) {
+    console.log(user);
+}
+// Alan
+// Jeff ... etc
+
+// Generate an Array of All Object Keys with Object.keys()
+Object.keys(obusersj); // returns [ 'Alan', 'Jeff', 'Sarah', 'Ryan' ]
