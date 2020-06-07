@@ -348,3 +348,96 @@ myPromise.catch(error => { // error is the argument passed into the reject metho
   console.log(error); // do something with the error.
 });
 // NOTE: the then and catch methods can be chained to the promise declaration if you choose.
+
+// Verify an Object's Constructor with instanceof
+let crow = new Bird("Alexis", "black");
+crow instanceof Bird; // => true
+
+// Use Prototype Properties to Reduce Duplicate Code
+// Since numLegs will probably have the same value for all instances of Bird, you essentially have a duplicated variable numLegs inside each Bird instance.
+// This may not be an issue when there are only two instances, but imagine if there are millions of instances. That would be a lot of duplicated variables.
+// A better way is to use Bird’s prototype. Properties in the prototype are shared among ALL instances of Bird. Here's how to add numLegs to the Bird prototype:
+Bird.prototype.numLegs = 2;
+// Can change a property to a new object
+Bird.prototype = {
+  constructor: Bird, // If you don't add this, the prototype will be overridden to Object
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+// crow inherits its prototype from the Bird constructor function. You can show this relationship with the isPrototypeOf method:
+Bird.prototype.isPrototypeOf(crow); // returns true
+
+Bird.prototype = Object.create(Animal.prototype);
+
+// Use a Mixin to Add Common Behavior Between Unrelated Objects
+// As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution.
+// Inheritance does not work well for unrelated objects like Bird and Airplane. They can both fly, but a Bird is not a type of Airplane and vice versa.
+// For unrelated objects, it's better to use mixins. A mixin allows other objects to use a collection of functions.
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+//The flyMixin takes any object and gives it the fly method.
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+
+// Immediately Invoked Function Expression (IIFE)
+// A common pattern in JavaScript is to execute a function as soon as it is declared:
+(function () {
+  console.log("Chirp, chirp!");
+})(); // this is an anonymous function expression that executes right away
+// Outputs "Chirp, chirp!" immediately
+
+// Use an IIFE to Create a Module
+// An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module. 
+// For example, an earlier challenge defined two mixins:
+
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  };
+}
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  };
+}
+// We can group these mixins into a module as follows:
+
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})(); // The two parentheses cause the function to be immediately invoked
+// Note that you have an immediately invoked function expression (IIFE) that returns an object motionModule. 
+// This returned object contains all of the mixin behaviors as properties of the object. 
+// The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. 
+// Here is an example using it:
+
+motionModule.glideMixin(duck);
+duck.glide();
