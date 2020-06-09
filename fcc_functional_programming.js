@@ -27,3 +27,18 @@ This makes the function easier to test, you know exactly what input it takes, an
 1) Don't alter a variable or object - create new variables and objects and return them if need be from a function.
 2) Declare function arguments - any computation inside a function depends only on the arguments, and not on any global object or variable.
 */
+
+// An implementation of the map method
+var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback){
+  var newArray = [];
+  for (let i = 0; i < this.length; i++)
+    newArray.push(callback(this[i]));
+
+    return newArray;
+};
+
+var new_s = s.myMap(function(item){
+  return item * 2;
+});
