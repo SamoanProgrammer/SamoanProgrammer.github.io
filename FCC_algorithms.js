@@ -47,3 +47,47 @@ function findElement(arr, func) {
   
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
   
+  // Return all objects that have a matching name and value pairs
+  function whatIsInAName(collection, source) {
+    var arr = [];
+  
+    let doesntExist = false;
+    for (let i = 0; i < collection.length; i++)
+    {
+      let collectObj = collection[i];
+      doesntExist = false;
+      for (let s in source)
+      {
+        if (source[s] !== collectObj[s])
+        {
+          doesntExist = true;
+          break;
+        }
+      }
+      
+      if (doesntExist)
+        continue;
+      else
+        arr.push(collectObj);
+    }
+  
+    return arr;
+  }
+  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+  // You can re-write my answer above like so:
+  function whatIsInAName(collection, source) {
+    // "What's in a name? that which we call a rose
+    // By any other name would smell as sweet.”
+    // -- by William Shakespeare, Romeo and Juliet
+    var srcKeys = Object.keys(source);
+  
+    return collection.filter(function(obj) {
+      return srcKeys.every(function(key) {
+        return obj.hasOwnProperty(key) && obj[key] === source[key];
+      });
+    });
+  }
+// Code Explanation
+// We filter through the collection using .filter().
+// Next, we return a Boolean value for the .filter() method.
+// Finally, we reduce to Boolean value to be returned for the .every() method.
