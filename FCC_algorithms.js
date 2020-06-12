@@ -91,3 +91,22 @@ function findElement(arr, func) {
 // We filter through the collection using .filter().
 // Next, we return a Boolean value for the .filter() method.
 // Finally, we reduce to Boolean value to be returned for the .every() method.
+
+// Spinal Tap CasePassed
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+function spinalCase(str) {
+  // Create a variable for the white space and underscores.
+  var regex = /\s+|_+/g;
+  console.log(str);
+  // Replace low-upper case to low-space-uppercase
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  console.log(str);
+  // Replace space and underscore with -
+  let retStr = str.replace(regex, "-").toLowerCase();
+  console.log(retStr);
+  return retStr;
+}
+
+// test here
+spinalCase("This Is Spinal Tap");
+spinalCase("Teletubbies say Eh-oh");
