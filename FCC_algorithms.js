@@ -110,3 +110,29 @@ function spinalCase(str) {
 // test here
 spinalCase("This Is Spinal Tap");
 spinalCase("Teletubbies say Eh-oh");
+
+// Pig Latin
+function translatePigLatin(str) {
+  let retStr = "";
+  let regex = /^[AEIOUaeiou]/;
+  let firstRegex = /[AEIOUaeiou]/;
+  if (regex.test(str))
+  {
+    retStr = `${str}way`;
+  }
+  else
+  {
+    let firstLetter = str; 
+    let lastLetters = "";
+    if (firstRegex.test(str))
+    {
+      let index = str.match(firstRegex).index;
+      firstLetter = str.substring(0,index);
+      lastLetters = str.slice(index);
+    }
+    retStr = `${lastLetters}${firstLetter}ay`;
+  }
+  return retStr;
+}
+
+translatePigLatin("glove");
