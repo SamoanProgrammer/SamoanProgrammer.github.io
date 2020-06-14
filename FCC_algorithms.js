@@ -165,3 +165,26 @@ function myReplace(str, before, after) {
 
 myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+/*DNA Pairing
+The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+Return the provided character as the first element in each array.
+For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]*/
+function pairElement(str) {
+  let retArr = [];
+  for(let i = 0; i < str.length; i++)
+  {
+    if (str[i] == "A")
+      retArr.push(["A","T"]);
+    else if (str[i] == "T")
+      retArr.push(["T","A"]);
+    else if (str[i] == "C")
+      retArr.push(["C","G"]);
+    else if (str[i] == "G")
+      retArr.push(["G","C"]);
+  }
+  return retArr;
+}
+
+pairElement("GCG");
