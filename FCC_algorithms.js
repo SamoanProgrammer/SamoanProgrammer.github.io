@@ -205,3 +205,25 @@ function fearNotLetter(str) {
 
 fearNotLetter("abce"); // should return 'd'
 fearNotLetter("abcdefghijklmnopqrstuvwxyz") // should return undefined.
+
+/*Sorted Union
+Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.*/
+function uniteUnique(...arr) {
+  let retArr = [];
+  for (let i = 0; i < arr.length; i++)
+  {
+    let subArray = arr[i];
+    for (let j = 0; j < subArray.length; j++)
+    {
+      let value = subArray[j];
+      if (!retArr.includes(value))
+      {
+        retArr.push(value);
+      }
+    }
+  }
+  console.log(retArr);
+  return retArr;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
