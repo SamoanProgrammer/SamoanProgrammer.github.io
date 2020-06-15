@@ -188,3 +188,20 @@ function pairElement(str) {
 }
 
 pairElement("GCG");
+
+/*Missing letters
+Find the missing letter in the passed letter range and return it.
+If all letters are present in the range, return undefined.*/
+function fearNotLetter(str) {
+  let entireAlphabet = "abcdefghijklmnopqrstuvwxyz";
+  let index = entireAlphabet.indexOf(str[0]);
+  let alphabet = entireAlphabet.slice(index);
+  for(let i = 0; i < alphabet.length; i++)
+  {
+    if (alphabet[i] !== str[i])
+      return alphabet[i];
+  }
+}
+
+fearNotLetter("abce"); // should return 'd'
+fearNotLetter("abcdefghijklmnopqrstuvwxyz") // should return undefined.
