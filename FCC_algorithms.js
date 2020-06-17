@@ -299,3 +299,27 @@ const smallestCommons = arr => {
 
 // test here
 smallestCommons([1, 5]);
+
+/*Drop it
+Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
+Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.*/
+function dropElements(arr, func) {
+  let retArr = [];
+  let ok = false;
+  for (let num of arr)
+  {
+    if (ok || func(num))
+    {
+      if (func(num))
+        ok = true;
+        
+      retArr.push(num);
+      continue;
+    }
+  }
+  console.log(retArr);
+  return retArr;
+}
+
+dropElements([0, 1, 0, 1], function(n) {return n === 1;});
+dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;});
