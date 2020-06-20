@@ -11,10 +11,6 @@
     width: 50px;
 }
 
-.store {
-  color: black;
-}
-
 /* Base reset */
 * {
   margin: 0;
@@ -264,6 +260,11 @@ img {
   margin-left: 10px;
   transform: translateX(0);
   transition: transform 0.3s ease-out;
+}
+
+/* Store section */
+.store-section {
+  color: black;
 }
 
 /* Contact section */
