@@ -11,6 +11,10 @@
     width: 50px;
 }
 
+.store {
+  color: black;
+}
+
 /* Base reset */
 * {
   margin: 0;
