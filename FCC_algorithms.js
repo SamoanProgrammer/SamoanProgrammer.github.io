@@ -423,3 +423,48 @@ addTogether(2)([3]);
 addTogether(2,3);
 addTogether(5)(7);
 addTogether(2, "3")
+
+// Palindrome Checker
+function palindrome(str) {
+  let regex = /\W+/g;
+  let newStr = str.replace(regex, '')
+                  .replace('_','')
+                  .toLowerCase();
+  let reverse = "";
+  for (let i = newStr.length - 1; i >= 0; i--)
+    reverse += newStr[i];
+  return newStr == reverse;
+}
+
+palindrome("A man, a plan, a canal. Panama");
+palindrome("eye**&*");
+palindrome("0_0 (: /-\ :) 0-0");
+
+/*Caesars Cipher
+One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. 
+In a shift cipher the meanings of the letters are shifted by some set amount.
+A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.
+Write a function which takes a ROT13 encoded string as input and returns a decoded string.
+All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.*/
+function rot13(str) {
+  let retValue = '';
+  for (let s of str)
+    retValue += decodeROT13(s);
+  console.log(retValue);
+  return retValue;
+}
+
+function decodeROT13(char)
+{
+  let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let regex = /[A-Z]/;
+  if (regex.test(char))
+  {
+    let index = (alphabet.indexOf(char) + 13) % alphabet.length;
+    return alphabet[index];
+  }
+  else
+    return char;
+}
+
+rot13("SERR PBQR PNZC");
