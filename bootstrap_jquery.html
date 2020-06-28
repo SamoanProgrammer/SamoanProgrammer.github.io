@@ -1,0 +1,54 @@
+<!-- Add Bootstrap -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+crossorigin="anonymous"/> 
+
+<script>
+    $(document).ready(function() {
+        // $("button").addClass("animated bounce");
+        // $(".well").addClass("animated shake");
+        // $("#target3").addClass("animated fadeOut");
+        $("#target1").css("color", "red"); // change css
+        $("#target1").prop("disabled", true); // change property of an element
+        $("#target4").html("<em>#target4</em>"); // modify the html of an element
+        $("#target4").remove(); // remove an element 
+        $("#target2").appendTo("#right-well"); // allows you to select HTML elements and append them to another element
+        $("#target5").clone() 
+            .appendTo("#left-well"); // clone copies an element, joining two functions together is called function-chaining
+        $("#target1").parent().css("background-color", "red"); // parent() allows you to access the parent of whichever element you've selected
+        $("#right-well").children().css("color", "orange"); // children() allows you to access the child elements of whichever element you've selected
+        $(".target:nth-child(2)").addClass("animated bounce"); // CSS selector allows you to select all the nth elements with the target class or element type
+        /*
+        You can also target elements based on their positions using :odd or :even selectors.
+        Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. 
+        This can be a little confusing as, counter-intuitively, :odd selects the second element (position 1), fourth element (position 3), and so on.
+        */
+        $(".target:even").addClass("animated shake"); 
+        $("body").addClass("animated hinge"); // Make entire body hinge out
+    });
+</script>
+
+<!-- Only change code above this line. -->
+
+<div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4>#left-well</h4>
+        <div class="well" id="left-well">
+          <button class="btn btn-default target" id="target1">#target1</button>
+          <button class="btn btn-default target" id="target2">#target2</button>
+          <button class="btn btn-default target" id="target3">#target3</button>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <h4>#right-well</h4>
+        <div class="well" id="right-well">
+          <button class="btn btn-default target" id="target4">#target4</button>
+          <button class="btn btn-default target" id="target5">#target5</button>
+          <button class="btn btn-default target" id="target6">#target6</button>
+        </div>
+      </div>
+    </div>
+  </div>  
