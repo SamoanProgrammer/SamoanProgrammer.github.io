@@ -1,3 +1,8 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css" rel="stylesheet">
+  />
+</head>
 <!-- Add Bootstrap -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
@@ -6,26 +11,26 @@ crossorigin="anonymous"/>
 
 <script>
     $(document).ready(function() {
-        // $("button").addClass("animated bounce");
-        // $(".well").addClass("animated shake");
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
         // $("#target3").addClass("animated fadeOut");
-        $("#target1").css("color", "red"); // change css
-        $("#target1").prop("disabled", true); // change property of an element
-        $("#target4").html("<em>#target4</em>"); // modify the html of an element
-        $("#target4").remove(); // remove an element 
-        $("#target2").appendTo("#right-well"); // allows you to select HTML elements and append them to another element
-        $("#target5").clone() 
-            .appendTo("#left-well"); // clone copies an element, joining two functions together is called function-chaining
-        $("#target1").parent().css("background-color", "red"); // parent() allows you to access the parent of whichever element you've selected
-        $("#right-well").children().css("color", "orange"); // children() allows you to access the child elements of whichever element you've selected
-        $(".target:nth-child(2)").addClass("animated bounce"); // CSS selector allows you to select all the nth elements with the target class or element type
+        // $("#target2").removeClass("btn-default");
+        // $("#target1").css("color", "red"); // change css
+        // $("#target1").prop("disabled", true); // change property of an element
+        // $("#target4").html("<em>#target4</em>"); // modify the html of an element
+        // $("#target4").remove(); // remove an element 
+        // $("#target2").appendTo("#right-well"); // allows you to select HTML elements and append them to another element
+        //$("#target5").clone().appendTo("#left-well"); // clone copies an element, joining two functions together is called function-chaining
+        // $("#target1").parent().css("background-color", "red"); // parent() allows you to access the parent of whichever element you've selected
+        // $("#right-well").children().css("color", "orange"); // children() allows you to access the child elements of whichever element you've selected
+        // $(".target:nth-child(2)").addClass("animated bounce"); // CSS selector allows you to select all the nth elements with the target class or element type
         /*
         You can also target elements based on their positions using :odd or :even selectors.
         Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. 
         This can be a little confusing as, counter-intuitively, :odd selects the second element (position 1), fourth element (position 3), and so on.
         */
-        $(".target:even").addClass("animated shake"); 
-        $("body").addClass("animated hinge"); // Make entire body hinge out
+        // $(".target:even").addClass("animated shake"); 
+        // $("body").addClass("animated hinge"); // Make entire body hinge out
     });
 </script>
 
